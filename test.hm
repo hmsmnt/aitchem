@@ -1,0 +1,11 @@
+numbers = [1, 2, 3, 4, 5]
+
+squared = numbers fn x -> x * x
+even = numbers fn x -> x % 2 == 0
+sum = numbers fn acc, x -> acc + x
+precise = 0.1 + 0.2
+
+console.log("squared:", squared)
+console.log("even:", even)
+console.log("sum:", sum)
+console.log("precise:", precise.toString())

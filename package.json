@@ -1,0 +1,22 @@
+{
+  "name": "aitchem",
+  "version": "1.0.0",
+  "description": "A lightweight language built on JavaScript with precise math and functional clarity.",
+  "bin": {
+    "hm": "./bin/hm.js"
+  },
+  "type": "module",
+  "main": "./lib/runner.js",
+  "keywords": [
+    "language",
+    "javascript",
+    "transpiler",
+    "precise",
+    "functional"
+  ],
+  "author": "Hermes Montagna",
+  "license": "MIT",
+  "dependencies": {
+    "decimal.js": "^10.4.3"
+  }
+}
