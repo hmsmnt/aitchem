@@ -1,0 +1,47 @@
+# Simula un piccolo shop con carrello, sconti, calcoli precisi, funzioni dichiarate ecc.
+
+products = [
+  { id: 1, name: "sword", price: 99.99 },
+  { id: 2, name: "shield", price: 149.49 },
+  { id: 3, name: "potion", price: 4.75 },
+]
+
+# Funzione per calcolare sconto
+applyDiscount = fn price -> Decimal(price).times('0.9')
+
+# Applica lo sconto su ogni prodotto
+discounted = products fn p -> {
+  p.price = applyDiscount(p.price).toFixed(2)
+  return p
+}
+
+# Filtra solo i prodotti sopra i 50€
+expensive = discounted fn p -> Decimal(p.price).gt('50')
+
+# Calcola il totale
+total = discounted fn acc, p -> Decimal(acc).plus(p.price).toFixed(2)
+
+# Funzione di saluto
+welcome = fn name -> {
+  log "Welcome," name
+  return "Enjoy your shopping!"
+}
+
+# Ciclo for per stampare il carrello
+log "=== Carrello Scontato ==="
+for(item, i in discounted) {
+  log i+1 item.name item.price
+}
+
+# Output riepilogo
+log "=== Totale:" total
+log welcome("Hero")
+
+a = [1,2]
+
+for(n, i in a){
+log n (i+1)
+}
+    
+
+

@@ -1,11 +1,35 @@
-numbers = [1, 2, 3, 4, 5]
+numbers = [1, 2, 3, 4]
 
 squared = numbers fn x -> x * x
 even = numbers fn x -> x % 2 == 0
 sum = numbers fn acc, x -> acc + x
 precise = 0.1 + 0.2
 
-console.log("squared:", squared)
-console.log("even:", even)
-console.log("sum:", sum)
-console.log("precise:", precise.toString())
+double = fn x -> x * 2
+
+greet = fn name -> {
+  log "Hi," name
+  return "ok"
+}
+
+# Test log multipli
+log squared even sum
+log even
+log sum
+log precise.toString()
+log double(10)
+log greet("Alice")
+log "test" (2+2)
+
+# Test for: solo elemento
+log "=== for(item in numbers) ==="
+for(item in numbers) {
+  log item
+}
+
+# Test for: elemento + indice
+log "=== for(item, index in numbers) ==="
+for(item, index in numbers) {
+  log index item
+}
+
